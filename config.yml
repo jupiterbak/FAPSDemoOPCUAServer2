@@ -1,6 +1,6 @@
 default:
   server:
-    port: 4843
+    port: 4840
     buildInfo:
       productName: "Dummy Dateset Server"
       buildNumber: "0001"

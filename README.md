@@ -2,7 +2,7 @@
 
 This is repository of the DEMO OPC UA-servers used to validate the results of the paper entitled "OPC UA Knowledge Completion via Graph Embedding and Reinforcement Learning". The servers import multiple nodesets copied from the official releases of the OPC Foundation: [https://github.com/OPCFoundation/UA-Nodeset](https://github.com/OPCFoundation/UA-Nodeset)
 
-The default port of the servers application are ***4840*** and can be changed in the configuration file ***config_dataset_one.yml*** and ***config_dataset_two.yml***.
+The default port of the servers application are ***4840*** and can be changed in the configuration file ***config.yml***.
 
 ## Requirements
 
@@ -50,27 +50,27 @@ Step 1: Clone the repo
 Step 2: Build the Docker image
 
 ```bash
-docker build -t opcua_server_skill_add .
+docker build -t faps_opcua_demo_server_two .
 ```
 
 Step 3: Run the Docker container locally:
 
 ```bash
-docker run -p 4843:4843 -d opcua_server_skill_add
+docker run -p 4840:4840 -d faps_opcua_demo_server_two
 ```
 
 <!-- USAGE -->
 ## Usage
 
-In order to configurethe server, the file ***config.yml*** has to be configured appropriately. For example the following configuration set the default port of the OPCUA server to 4843.
+In order to configurethe server, the file ***config.yml*** has to be configured appropriately. For example the following configuration set the default port of the OPCUA server to 4840.
 
 
 ```yaml
 default:
   server:
-    port: 4843
+    port: 4840
     buildInfo:
-      productName: "DummySkillServer - Add"
+      productName: "Dummy Dateset Server"
       buildNumber: "0001"
     ip: "0.0.0.0"
     endpointName: 'OPCUA@Siemens'
@@ -81,7 +81,16 @@ default:
       applicationUri: "http://siemens.com/SkillOPCUA"
       productUri: "siemens.com/SP347_Example"
       applicationName: "SP347SkillEngineering@Siemens" 
-    serverNodeSet: ["AutomationSkillType_OptionalStateMachine.xml","SkillADD_OptionalStateMachine.xml"]
+    serverNodeSet: ["UA-Nodeset-master/DI/Opc.Ua.Di.PredefinedNodes.xml",
+    "UA-Nodeset-master/FDI/Opc.Ua.Fdi7.PredefinedNodes.xml", 
+    "UA-Nodeset-master/CNC/Opc.Ua.CNC.NodeSet.xml", 
+    "UA-Nodeset-master/Robotics/Opc.Ua.Robotics.NodeSet2.xml", 
+
+    "UA-Nodeset-master/PackML/Opc.Ua.PackML.NodeSet2.xml",
+    "UA-Nodeset-master/IOLink/Opc.Ua.IOLink.NodeSet2.xml",
+    "UA-Nodeset-master/PlasticsRubber/GeneralTypes/1.02/Opc.Ua.PlasticsRubber.GeneralTypes.NodeSet2.xml",
+    "UA-Nodeset-master/PlasticsRubber/TCD/1.01/Opc.Ua.PlasticsRubber.TCD.NodeSet2.xml",
+    "UA-Nodeset-master/PlasticsRubber/Extrusion/ExtrusionLine/1.00/Opc.Ua.PlasticsRubber.Extrusion.ExtrusionLine.NodeSet2.xml"]
 
 ```
 
