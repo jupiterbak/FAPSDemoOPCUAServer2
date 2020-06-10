@@ -17,7 +17,7 @@ default:
     "UA-Nodeset-master/FDI/Opc.Ua.Fdi7.PredefinedNodes.xml", 
     "UA-Nodeset-master/CNC/Opc.Ua.CNC.NodeSet.xml", 
     "UA-Nodeset-master/Robotics/Opc.Ua.Robotics.NodeSet2.xml", 
-    "UA-Nodeset-master/TMC\Opc.Ua.TMC.NodeSet2.xml",
+
     "UA-Nodeset-master/PackML/Opc.Ua.PackML.NodeSet2.xml",
     "UA-Nodeset-master/IOLink/Opc.Ua.IOLink.NodeSet2.xml",
     "UA-Nodeset-master/PlasticsRubber/GeneralTypes/1.02/Opc.Ua.PlasticsRubber.GeneralTypes.NodeSet2.xml",
